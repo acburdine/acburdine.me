@@ -1,18 +1,24 @@
 <?php
 
-ini_set('display_errors', 1);
-
 require '../mail.php';
 
 $data = $_POST;
+$shouldSend = true;
 
-$mail = new Mail();
-$didSendMessage = $mail->sendMessage($data);
-
-if($didSendMessage) {
-    $message = 'Thank you. I will get back to you as soon as I can.';
-} else {
+if(count($data) < 1) {
     $message = 'Sorry, something went wrong. <a href="/#contact">Try again?</a>';
+    $shouldSend = false;
+}
+
+if($shouldSend) {
+    $mail = new Mail();
+    $didSendMessage = $mail->sendMessage($data);
+
+    if($didSendMessage) {
+        $message = 'Thank you. I will get back to you as soon as I can.';
+    } else {
+        $message = 'Sorry, something went wrong. <a href="/#contact">Try again?</a>';
+    }
 }
 ?>
 
