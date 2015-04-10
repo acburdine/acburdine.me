@@ -27,7 +27,7 @@ $(function() {
 $(document).ready(function() {
     $(document).keydown(function(e) {
         var isText = $(document.activeElement).hasClass('inputtext');
-        if(e.keyCode == 32 || (e.keyCode == 8 && !isText)) {
+        if((e.keyCode == 32 || e.keyCode == 8) && !isText) {
             var currentLink = $('li.active');
             if(e.keyCode == 32) {
                 currentLink.next().children('.page-scroll').click();

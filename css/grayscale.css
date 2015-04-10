@@ -381,3 +381,54 @@ body {
 .text-negative a:hover {
     color: #CD9800;
 }
+
+.form-control {
+    background: #000;
+    border-color: #CD9800;
+    color: #CD9800;
+}
+
+.form-control:focus {
+    border-color: #009BCD;
+}
+
+.form-control::-webkit-input-placeholder {
+   color: #cd9800;
+}
+
+.form-control:-moz-placeholder { /* Firefox 18- */
+   color: #cd9800;  
+}
+
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+   color: #cd9800;  
+}
+
+.form-control:-ms-input-placeholder {  
+   color: #cd9800;  
+}
+
+/*.social-bar {
+    background-color: rgba(255,255,255,.3);
+}*/
+
+.social-image {
+    max-width: 75px;
+    width: 100%;
+    border-radius: 100%;
+    border: 4px solid #000;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease;
+    -ms-transition: border 0.5s ease;
+    -o-transition: border 0.5s ease;
+    transition: border 0.5s ease;
+}
+
+.social-image:hover {
+    border: 4px solid #CD9800;
+    -webkit-transition: border 0.5s ease;
+    -moz-transition: border 0.5s ease;
+    -ms-transition: border 0.5s ease;
+    -o-transition: border 0.5s ease;
+    transition: border 0.5s ease;
+}
