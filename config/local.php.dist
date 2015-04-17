@@ -1,6 +1,9 @@
 <?php
 
 return array(
+    'host'      => '',
+    'isEncrypted' => false,
+    'port'      => 25,
     'username'  => '',
     'password'  => ''
 );
