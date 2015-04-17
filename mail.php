@@ -8,9 +8,14 @@ class Mail {
 
     public function __construct() {
         $params = require('config/local.php');
-        $transporter = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-                                            ->setUsername($params['username'])
-                                            ->setPassword($params['password']);
+        $hasUserPass = ((boolean)$params['username'] && (boolean)$params['password']);
+        $transporter = Swift_SmtpTransport::newInstance($params['host'], $params['port']);
+        if($params['isEncrypted']) {
+            $transporter->setEncryption('ssl');
+        }
+        if($hasUserPass) {
+            $transporter->setUsername($params['username'])->setPassword($params['password']);
+        }
 
         $this->mailer = Swift_Mailer::newInstance($transporter);
     }
