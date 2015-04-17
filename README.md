@@ -13,5 +13,10 @@ It also has a basic contact form written in PHP using SwiftMailer.
 4. Run the composer install `php composer.phar install`
 5. Point your webserver to `/public` as your document root.
 
+##### In order to get mail functionality to work, you must also provide a mail config:
+1. `cd config`
+2. `cp local.php.dist local.php`
+3. Edit `local.php` with your configuration values. See the [SwiftMailer](http://swiftmailer.org/) documentation for more details.
+
 ## License
 This website code is licensed under the Apache 2.0 [license](LICENSE).
