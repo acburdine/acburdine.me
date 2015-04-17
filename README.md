@@ -6,4 +6,4 @@ This is a simple one-page HTML website written with [Bootstrap](http://getbootst
 It also has a basic contact form written in PHP using SwiftMailer.
 
 ## License
-This website code is licensed under the Apache 2.0 [license](license.txt).
+This website code is licensed under the Apache 2.0 [license](LICENSE).
