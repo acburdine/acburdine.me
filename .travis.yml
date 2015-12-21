@@ -1,0 +1,13 @@
+language: ruby
+script: bundle exec middleman build
+sudo: false
+after_success: |
+  export PATH=$HOME/.local/bin:$PATH &&
+  [ $TRAVIS_BRANCH = master ] &&
+  [ $TRAVIS_PULL_REQUEST = false ] &&
+  pip install ghp-import --user `whoami` &&
+  ghp-import -n build &&
+  git push -fq https://${TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+env:
+  global:
+    - secure: "X8Gdqu4Ujvv3IaG1mlcnzUtLO/cXVVZ6M7zG3+mJtZ20MXZE1AEOudeDn9QNiQYAB5g+qKJLF3zdx1mlApcieHsNC6DNs4g3fF36N3dzXcSEM0hiM6WkvcEe44dNlDyD10NWvjZLmSIyNZNymdXdimIkXX68+BpJvTf/CFYbLv0="
