@@ -1,0 +1,95 @@
+.index .navbar {
+    display: none;
+}
+
+@mixin link-underline ($color, $underline-color, $time, $t2) {
+    position: relative;
+    color: $color;
+    text-decoration: none;
+
+    &:hover {
+        color: $color;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $underline-color;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all $time ease-in-out $t2;
+        transition: all $time ease-in-out $t2;
+    }
+
+    &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+.main-splash {
+    background: $bg-main;
+    color: #FFF;
+    width: 100%;
+    min-height: 100vh;
+
+    .splash-info-container {
+        font-weight: 300;
+        padding-top: 3rem;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .splash-info {
+            text-align: center;
+            line-height: 40px;
+
+            h1 {
+                font-weight: inherit;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+            }
+
+            .splash-nav {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+
+                a {
+                    font-size: 20px;
+                    @include link-underline(#FFF, #FFF, 0.3s, 0s);
+                    text-transform: uppercase;
+                    margin: 0 15px;
+                }
+            }
+
+            em {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            img {
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .social-icons {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                font-size: 40px;
+
+                & > a {
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+}
