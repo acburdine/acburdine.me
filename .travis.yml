@@ -1,6 +1,7 @@
 language: ruby
 rvm:
   - 2.2.4
+cache: bundler
 script: bundle exec middleman build
 sudo: false
 after_success: |
