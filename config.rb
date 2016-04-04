@@ -32,6 +32,13 @@
 # Helpers
 ###
 
+helpers do
+  def page_link(name, url)
+    activeClass = (url == current_page.url) ? ' class="active"' : ''
+    "<li#{activeClass}><a href=\"#{url}\">#{name}</a></li>"
+  end
+end
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
