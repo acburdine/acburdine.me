@@ -1,0 +1,36 @@
+{
+  "name": "acburdine.me",
+  "version": "0.1.0",
+  "description": "Personal website of Austin Burdine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acburdine/acburdine.me.git"
+  },
+  "keywords": [
+    "metalsmith",
+    "website"
+  ],
+  "author": "Austin Burdine <acburdine@gmail.com> (https://acburdine.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acburdine/acburdine.me/issues"
+  },
+  "homepage": "https://github.com/acburdine/acburdine.me#readme",
+  "devDependencies": {
+    "handlebars": "^4.0.5",
+    "metalsmith": "^2.1.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-autoprefixer": "^1.1.0",
+    "metalsmith-clean-css": "^4.0.0",
+    "metalsmith-concat": "^6.0.0",
+    "metalsmith-discover-partials": "^0.1.0",
+    "metalsmith-formatcheck": "^0.2.0",
+    "metalsmith-layouts": "^1.6.5",
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-sass": "^1.3.0"
+  }
+}

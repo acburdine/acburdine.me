@@ -1,0 +1,25 @@
+{
+  "name": "acburdine.me",
+  "description": "Personal website of Austin Burdine",
+  "main": "index.js",
+  "authors": [
+    "Austin Burdine <acburdine@gmail.com> (https://acburdine.me)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "metalsmith",
+    "website"
+  ],
+  "homepage": "https://github.com/acburdine/acburdine.me",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  }
+}
