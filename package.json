@@ -4,7 +4,8 @@
   "description": "Personal website of Austin Burdine",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node index.js",
+    "test": "eslint *.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
   },
   "homepage": "https://github.com/acburdine/acburdine.me#readme",
   "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-xo": "^0.15.2",
     "handlebars": "^4.0.5",
     "metalsmith": "^2.1.0",
     "metalsmith-assets": "^0.1.0",

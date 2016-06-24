@@ -1,13 +1,14 @@
-var Metalsmith = require('metalsmith'),
-    assets = require('metalsmith-assets'),
-    sass = require('metalsmith-sass'),
-    autoprefixer = require('metalsmith-autoprefixer'),
-    permalinks = require('metalsmith-permalinks'),
-    layouts = require('metalsmith-layouts'),
-    concat = require('metalsmith-concat'),
-    cleanCss = require('metalsmith-clean-css');
+var path = require('path');
+var metalsmith = require('metalsmith');
+var assets = require('metalsmith-assets');
+var sass = require('metalsmith-sass');
+var autoprefixer = require('metalsmith-autoprefixer');
+var permalinks = require('metalsmith-permalinks');
+var layouts = require('metalsmith-layouts');
+var concat = require('metalsmith-concat');
+var cleanCss = require('metalsmith-clean-css');
 
-Metalsmith(__dirname)
+metalsmith(__dirname)
     .metadata({
         title: 'acburdine.me | the personal website of Austin Burdine'
     })
@@ -27,7 +28,7 @@ Metalsmith(__dirname)
     }))
     .use(sass({
         outputDir: './assets/css',
-        includePaths: [__dirname + '/bower_components/bootstrap-sass/assets/stylesheets/'],
+        includePaths: [path.join(__dirname, '/bower_components/bootstrap-sass/assets/stylesheets/')],
         sourceMap: true,
         sourceMapContents: true
     }))
@@ -36,10 +37,11 @@ Metalsmith(__dirname)
         output: './assets/css/style.css',
         forceOutput: true
     }))
+    .use(autoprefixer())
     .use(cleanCss({
         files: './assets/css/style.css'
     }))
-    .build(function (err, files) {
+    .build(function (err) {
         if (err) {
             throw err;
         }
