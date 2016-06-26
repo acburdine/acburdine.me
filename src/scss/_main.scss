@@ -1,0 +1,133 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+.content {
+    padding: 15px;
+    background-color: #FFF;
+}
+
+.index .navbar {
+    display: none;
+}
+
+.index .content {
+    padding: 0;
+    background-color: inherit;
+}
+
+.container {
+    background-color: $c-main;
+    padding: 0;
+}
+
+.navbar-nav {
+    li:not(:first-child) {
+        border-left: solid 1px #FFF;
+    }
+}
+
+@mixin link-underline ($color, $underline-color, $time, $t2) {
+    position: relative;
+    color: $color;
+    text-decoration: none;
+
+    &:hover {
+        color: $color;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        bottom: 0;
+        left: 10%;
+        background-color: $underline-color;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all $time ease-in-out $t2;
+        transition: all $time ease-in-out $t2;
+    }
+
+    &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+.social-icons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    font-size: 40px;
+
+    & > a {
+        padding: 0 15px;
+    }
+}
+
+.site-footer .social-icons {
+    background: $c-main;
+    color: #FFF;
+}
+
+.index .site-footer {
+    display: none;
+}
+
+.main-splash {
+    background: $c-main;
+    color: #FFF;
+    width: 100%;
+    min-height: 100vh;
+
+    .splash-info-container {
+        font-weight: 300;
+        padding-top: 3rem;
+
+        .splash-info {
+            text-align: center;
+            line-height: 40px;
+
+            h1 {
+                font-weight: inherit;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            .splash-nav {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                padding: 0;
+
+                a {
+                    font-size: 20px;
+                    @include link-underline(#FFF, #FFF, 0.3s, 0s);
+                    padding: 0 15px 5px;
+                    text-transform: lowercase;
+                    line-height: normal;
+                }
+
+                a:not(:first-child) {
+                    border-left: solid 1px #FFF;
+                }
+            }
+
+            em {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            img {
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

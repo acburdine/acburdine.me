@@ -6,14 +6,23 @@ var autoprefixer = require('metalsmith-autoprefixer');
 var permalinks = require('metalsmith-permalinks');
 var layouts = require('metalsmith-layouts');
 var concat = require('metalsmith-concat');
+var ignore = require('metalsmith-ignore');
 var cleanCss = require('metalsmith-clean-css');
+
+var javascriptSourceFiles = [
+    'jquery/dist/jquery.min.js',
+    'bootstrap-sass/assets/javascripts/bootstrap.min.js',
+    './js/**/*.js'
+];
 
 metalsmith(__dirname)
     .metadata({
-        title: 'acburdine.me | the personal website of Austin Burdine'
+        default_title: 'acburdine.me | the personal website of Austin Burdine' // eslint-disable-line camelcase
     })
     .source('./src')
     .destination('./build')
+    .clean(true)
+    .use(ignore('public/**'))
     .use(layouts({
         engine: 'handlebars',
         partials: 'layouts/partials',
@@ -21,20 +30,28 @@ metalsmith(__dirname)
         pattern: '**/*.hbs',
         rename: true
     }))
-    .use(permalinks())
     .use(assets({
         source: './src/public',
         destination: '.'
     }))
+    .use(permalinks({
+        relative: false
+    }))
     .use(sass({
         outputDir: './assets/css',
-        includePaths: [path.join(__dirname, '/bower_components/bootstrap-sass/assets/stylesheets/')],
+        includePaths: [path.join(__dirname, 'bower_components/bootstrap-sass/assets/stylesheets/')],
         sourceMap: true,
         sourceMapContents: true
     }))
     .use(concat({
         files: './assets/css/*.css',
         output: './assets/css/style.css',
+        forceOutput: true
+    }))
+    .use(concat({
+        files: javascriptSourceFiles,
+        output: './assets/js/site.js',
+        searchPaths: ['bower_components'],
         forceOutput: true
     }))
     .use(autoprefixer())

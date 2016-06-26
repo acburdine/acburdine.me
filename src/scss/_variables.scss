@@ -1,0 +1,25 @@
+$c-main: mix(#4D71AA, #000, 75%);
+$c-grey: #5D5D5D;
+$c-green: #788039;
+$c-reddish: #804139;
+$c-brown: #806439;
+
+$body-bg: $c-brown;
+$font-family-sans-serif: "Lato", Arial, sans-serif;
+
+// Scaffolding
+$link-color: inherit;
+$link-hover-decoration: none;
+$link-hover-color: inherit;
+
+
+// Navbars
+$navbar-default-bg: $c-main;
+$navbar-border-radius: 0;
+$navbar-padding-horizontal: 0;
+$navbar-default-color: #FFF;
+$navbar-default-link-color: #FFF;
+$navbar-default-link-hover-color: #FFF;
+$navbar-default-link-hover-bg: darken($c-main, 6.5%);
+$navbar-default-link-active-color: #FFF;
+$navbar-default-border: $navbar-default-bg;

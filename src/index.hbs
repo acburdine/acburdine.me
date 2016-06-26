@@ -1,5 +1,57 @@
 ---
 layout: main.hbs
+title: Home
+page_classes: index home
 ---
 
-<p>Testing</p>
+<main>
+    <div class="main-splash">
+        <div class="row">
+            <div class="splash-info-container col-lg-4 col-lg-offset-4 col-md-8 col-md-offset-2">
+                <div class="splash-info">
+
+                    <img class="img-responsive img-circle" src="/assets/img/profile.jpg" />
+
+                    <h1>austin burdine</h1>
+
+                    <br>
+
+                    <em>I'm a JavaScript and PHP developer.</em>
+
+                    <br><br>
+
+                    <nav class="splash-nav">
+                        {{link about '/about/'}}
+                        {{link projects '/projects/'}}
+                        {{link portfolio '/portfolio/'}}
+                        {{link contact '/contact/'}}
+
+                        <a href="https://blog.acburdine.me/" target="_blank">
+                            blog
+                        </a>
+                    </nav>
+
+                    <hr>
+
+                    <div class="social-icons">
+                        <a href="https://github.com/acburdine/" target="_blank">
+                            <i class="fa fa-github-square fa-fw"></i>
+                        </a>
+
+                        <a href="https://linkedin.com/in/acburdine/" target="_blank">
+                            <i class="fa fa-linkedin-square fa-fw"></i>
+                        </a>
+
+                        <a href="https://twitter.com/acburdine/" target="_blank">
+                            <i class="fa fa-twitter-square fa-fw"></i>
+                        </a>
+
+                        <a href="mailto:austin@acburdine.me">
+                            <i class="fa fa-envelope fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
