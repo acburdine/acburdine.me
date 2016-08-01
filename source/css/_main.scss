@@ -21,10 +21,8 @@
     padding: 0;
 }
 
-.navbar-nav {
-    li:not(:first-child) {
-        border-left: solid 1px #FFF;
-    }
+.navbar-collapse:not(.in):not(.collapsing) .navbar-nav li:not(:first-child) {
+    border-left: solid 1px #FFF;
 }
 
 @mixin link-underline ($color, $underline-color, $time, $t2) {
@@ -108,7 +106,7 @@
                 a {
                     font-size: 20px;
                     @include link-underline(#FFF, #FFF, 0.3s, 0s);
-                    padding: 0 15px 5px;
+                    padding: 0 15px 10px;
                     text-transform: lowercase;
                     line-height: normal;
                 }
