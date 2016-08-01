@@ -7,6 +7,15 @@
     background-color: #FFF;
 }
 
+body:not(.index) .content a {
+    color: $c-main;
+
+    &:hover {
+        text-decoration: underline;
+        color: $c-grey;
+    }
+}
+
 .index .navbar {
     display: none;
 }
