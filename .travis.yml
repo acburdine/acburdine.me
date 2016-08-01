@@ -9,8 +9,12 @@ after_success: |
   [ $TRAVIS_BRANCH = master ] &&
   [ $TRAVIS_PULL_REQUEST = false ] &&
   pip install ghp-import --user `whoami` &&
-  ghp-import -n build &&
+  ghp-import -n -m "update acburdine.me build" build &&
   git push -fq https://${TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
 env:
   global:
     - secure: "X8Gdqu4Ujvv3IaG1mlcnzUtLO/cXVVZ6M7zG3+mJtZ20MXZE1AEOudeDn9QNiQYAB5g+qKJLF3zdx1mlApcieHsNC6DNs4g3fF36N3dzXcSEM0hiM6WkvcEe44dNlDyD10NWvjZLmSIyNZNymdXdimIkXX68+BpJvTf/CFYbLv0="
+    - GIT_AUTHOR_NAME="Austin Burdine"
+    - GIT_AUTHOR_EMAIL="acburdine@gmail.com"
+    - GIT_COMMITTER_NAME="Austin Burdine"
+    - GIT_COMMITTER_EMAIL="acburdine@gmail.com"
