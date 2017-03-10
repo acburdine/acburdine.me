@@ -1,0 +1,40 @@
+.site-logo {
+    font-family: 'Muli', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.site-logo > span:not(.short) {
+    max-width: 100%;
+    transition: max-width 0.5s linear;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// Need to duplicate these because of the differing transition times
+.site-logo > span.short {
+    max-width: 100%;
+    transition: max-width 0.2s linear;
+    max-width: 75px;
+    letter-spacing: -5.5px;
+    padding-right: 5.5px;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.site-logo.shrink > span {
+    max-width: 0;
+}

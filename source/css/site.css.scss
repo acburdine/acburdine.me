@@ -1,4 +1,12 @@
-@import "variables";
-@import "bootstrap";
+@import 'variables';
+@import 'bootstrap'; // We don't technically need all of bootstrap but to avoid figuring out what specifically needs importing we'll just import all of it.
 
 @import "main";
+
+// Patterns
+@import "patterns/logo";
+@import "patterns/nav";
+
+// Fontawesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
